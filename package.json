@@ -1,0 +1,16 @@
+{
+  "name": "lra-backend",
+  "version": "0.4.0",
+  "description": "Backend api for LRA",
+  "main": "app.js",
+  "author": "Chad Conway",
+  "license": "MIT",
+  "dependencies": {
+    "cookie-parser": "^1.4.4",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "http-errors": "^1.7.3",
+    "nodemailer": "^6.3.1",
+    "nodemon": "^1.19.4"
+  }
+}
