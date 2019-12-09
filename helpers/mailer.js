@@ -1,8 +1,8 @@
 module.exports = {
-	getTransport: function() {
+	getTransport: async function() {
 		const nodemailer = require('nodemailer');
-		const transporter = nodemailer.createTransport({
-			service: 'gamail',
+		const transporter = await nodemailer.createTransport({
+			service: 'gmail',
 			auth: {
 				user: 'lra.mailer.1@gmail.com',
 				pass: 'Candysugar15'
@@ -55,13 +55,18 @@ module.exports = {
 			{
 				region: 'other',
 				to: 'roger'
+			},
+			{
+				region: 'test',
+				to: 'chad'
 			}
 		];
 		const addresses = {
 			frank: 'frank.bonack@thelivingrosaryapostolate.com',
 			genevieve: 'genevieve.mamai@livingrosaryapostolate.com',
 			glenda: 'glendalafleur@thelivingrosaryapostolate.com ',
-			roger: 'info@thelivingrosaryapostolate.com '
+			roger: 'info@thelivingrosaryapostolate.com ',
+			chad: 'admin@thelivingrosaryapostolate.com'
 		};
 		for (x in zones) {
 			if (x.region === region) {
@@ -73,7 +78,7 @@ module.exports = {
 		}
 	},
 
-	createEmail: function(to, subject, firstName, lastName, region, note) {
+	createMailOptions: function(to, subject, firstName, lastName, region, note) {
 		let mailOptions = {
 			from: 'lra.mailer.1@gmail.com',
 			'this.to': to,
